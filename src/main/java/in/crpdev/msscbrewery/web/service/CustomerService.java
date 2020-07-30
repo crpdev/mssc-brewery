@@ -11,5 +11,5 @@ import java.util.UUID;
  * Package: in.crpdev.msscbrewery.web.service
  **/
 public interface CustomerService {
-    CustomerDto getCustomer(UUID uuid);
+    CustomerDto getCustomer(UUID customerId);
 }

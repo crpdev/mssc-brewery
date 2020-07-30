@@ -21,4 +21,13 @@ public class BeerServiceImpl implements BeerService {
                 .beerStyle("Lehar")
                 .build();
     }
+
+    @Override
+    public BeerDto save(BeerDto beerDto) {
+        return new BeerDto().builder()
+                .id(UUID.randomUUID())
+                .build();
+    }
+
+
 }

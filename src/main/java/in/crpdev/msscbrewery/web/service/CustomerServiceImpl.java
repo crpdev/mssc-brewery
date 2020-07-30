@@ -15,7 +15,7 @@ import java.util.UUID;
 @Service
 public class CustomerServiceImpl implements CustomerService {
     @Override
-    public CustomerDto getCustomer(UUID uuid) {
+    public CustomerDto getCustomer(UUID customerId) {
         return new CustomerDto().builder()
                 .id(UUID.randomUUID())
                 .name("Rajapandian")
