@@ -31,11 +31,17 @@ public class BeerController {
     }
 
     @PostMapping
-    public ResponseEntity saveNewBeer(BeerDto beerDto){
+    public ResponseEntity saveNewBeer(@RequestBody BeerDto beerDto){
         BeerDto savedBeer = beerService.save(beerDto);
         HttpHeaders headers = new HttpHeaders();
 //      ToDo - Fetch hostname to be set to the header
         headers.add("Location", "http://localhost:8080/api/v1/beer/" + savedBeer.getId().toString());
         return new ResponseEntity(headers, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{beerid}")
+    public ResponseEntity updateBeer(@PathVariable("beerId") UUID beerId, @RequestBody BeerDto beerDto){
+        beerService.updateBeer(beerId, beerDto);
+        return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 }
