@@ -1,6 +1,7 @@
 package in.crpdev.msscbrewery.web.service;
 
 import in.crpdev.msscbrewery.web.model.BeerDto;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -11,6 +12,7 @@ import java.util.UUID;
  * Project: mssc-brewery
  * Package: in.crpdev.msscbrewery.web.service
  **/
+@Slf4j
 @Service
 public class BeerServiceImpl implements BeerService {
     @Override
@@ -34,5 +36,8 @@ public class BeerServiceImpl implements BeerService {
 //        ToDo - Will be implementing the Logic at a later stage
     }
 
-
+    @Override
+    public void deleteBeerById(UUID beerId) {
+        log.debug("Deleting beer {}: ", beerId);
+    }
 }
