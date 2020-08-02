@@ -1,6 +1,7 @@
 package in.crpdev.msscbrewery.web.service;
 
 import in.crpdev.msscbrewery.web.model.BeerDto;
+import in.crpdev.msscbrewery.web.model.BeerStyle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +21,7 @@ public class BeerServiceImpl implements BeerService {
         return new BeerDto().builder()
                 .id(UUID.randomUUID())
                 .beerName("Kingfisher")
-                .beerStyle("Lehar")
+                .beerStyle(BeerStyle.LAGER)
                 .build();
     }
 
