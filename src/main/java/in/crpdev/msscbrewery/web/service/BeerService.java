@@ -11,7 +11,7 @@ import java.util.UUID;
  * Package: in.crpdev.msscbrewery.web
  **/
 public interface BeerService {
-    BeerDto getBeer(UUID beerid);
+    BeerDto getBeer(UUID beerId);
 
     BeerDto save(BeerDto beerDto);
 
